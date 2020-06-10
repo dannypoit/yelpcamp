@@ -59,6 +59,6 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 // start server
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("YelpCamp Server has started.")
 });
