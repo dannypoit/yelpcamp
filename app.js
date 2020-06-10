@@ -16,15 +16,15 @@ var commentRoutes    = require("./routes/comments"),
     campgroundRoutes = require("./routes/campgrounds"),
     indexRoutes      = require("./routes/index");
 
-// mongoose.connect("mongodb://localhost/yelp_camp", {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true, useUnifiedTopology: true});
 
-mongoose.connect("mongodb+srv://respecDev:CkgVX*Y@jHvn3Mb@cluster0-1jggn.mongodb.net/yelpcamp?retryWrites=true&w=majority", {
-  useNewUrlParser: true, 
-  useCreateIndex: true, 
-  useUnifiedTopology: true
-})
-.then(() => console.log('Database Connected'))
-.catch(err => console.log(err));
+// mongoose.connect("mongodb+srv://respecDev:CkgVX*Y@jHvn3Mb@cluster0-1jggn.mongodb.net/yelpcamp?retryWrites=true&w=majority", {
+//   useNewUrlParser: true, 
+//   useCreateIndex: true, 
+//   useUnifiedTopology: true
+// })
+// .then(() => console.log('Database Connected'))
+// .catch(err => console.log(err));
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
